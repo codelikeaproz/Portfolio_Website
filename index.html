@@ -107,7 +107,7 @@
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div className="flex flex-col md:flex-row items-center gap-6 w-full md:w-auto">
                         <div className="relative group">
-                            <img alt="Ralph Jumao-as" className="w-32 h-32 md:w-40 md:h-40 rounded-3xl object-cover shadow-lg border-4 border-white dark:border-slate-800 transition-colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZp22NnUzG1tsGzFa2IpJguiSPouvEHFSyzBbdpLSLaXSuNJLEi8V-V7ZNVhisRfn3DH4OboOAyQHxsxFj2iFwWcnV_FNRFEmDzxfQ6QOYsdLwiz7b5XZWfHFJD519Yuuk4o7NnP5EXNsLyKzcKgf4HseWVDOCrjLMTcx7twHF4u2OEUn4gRcuVkVujMbCqsupiWiocFitWfOAwwwWx8ef-iWFpoSkqaKmR6_nppdqsmdbijr6WXKzGB3OtfkA771kkBESKMNno4xy" />
+                            <img alt="Ralph Jumao-as" className="w-32 h-32 md:w-40 md:h-40 rounded-3xl object-cover shadow-lg border-4 border-white dark:border-slate-800 transition-colors" src="assets/profile_img.png" loading="lazy" />
                             <div className="absolute bottom-2 right-2 bg-green-500 w-5 h-5 rounded-full border-4 border-white dark:border-slate-800 transition-colors"></div>
                         </div>
                         <div className="text-center md:text-left">
@@ -193,7 +193,7 @@
                     <div>
                         <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Backend &amp; Database</h3>
                         <div className="flex flex-wrap gap-2">
-                            {["Node.js", "Express", "PostgreSQL", "MongoDB", "Firebase"].map(tech => (
+                            {["Node.js", "PostgreSQL", "Firebase", "Laravel", "PHP", ".NET"].map(tech => (
                                 <Badge key={tech} text={tech} />
                             ))}
                         </div>
@@ -201,7 +201,7 @@
                     <div>
                         <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">DevOps & Cloud</h3>
                         <div className="flex flex-wrap gap-2">
-                            {["AWS", "Docker", "Git", "GitHub", "GitLab", "GitLab CI/CD"].map(tech => (
+                            {["AWS", "Docker", "Git", "GitHub", "GitLab CI/CD"].map(tech => (
                                 <Badge key={tech} text={tech} />
                             ))}
                         </div>
@@ -322,8 +322,8 @@
                 <div className="relative border-l-2 border-slate-100 dark:border-slate-700 ml-3 space-y-10 transition-colors">
                     {[
                         { title: "UI/UX Designer", company: "Creative Digital Agency", year: "2025 - Present", desc: "Leading the design of user-centric interfaces for web and mobile applications. Conducting user research, creating wireframes, and delivering high-fidelity prototypes.", color: "bg-slate-900 dark:bg-white" },
-                        { title: "Lead Capstone Developer", company: "University Project", year: "2024 - 2025", desc: "Spearheaded the development of 'EcoTrack,' a waste management system. Managed the full stack development lifecycle using React and Node.js.", color: "bg-white dark:bg-slate-800" },
-                        { title: "Website Designing Competition", company: "DevCon Bukidnon", year: "2024", desc: "Design and develop a website for the competition using Canva and Figma etc. Won 2nd place in the competition mentored by the Ma'am Glayds Ayunar.", color: "bg-white dark:bg-slate-800" }
+                        { title: "Lead Capstone Developer", company: "University Project", year: "2024 - 2025", desc: "Spearheaded the development of 'Web-based Incident Reporting and Utilization System,' a waste accident related incidents and disasters management system for post assessment for Municipal Disaster Risk Reduction and Management Office (MDRRMO).", color: "bg-white dark:bg-slate-800" },
+                        { title: "Website Designing Competition", company: "DevCon Bukidnon", year: "2024", desc: "Design and develop a website for the competition using Canva and Figma etc. Won 2nd place in the competition mentored by the Ma'am Glayds Ayunar.", color: "bg-white dark:bg-slate-800" },
                     ].map((job, i) => (
                         <div key={i} className="relative pl-7 group ">
                             <div className={`absolute -left-[9px] top-1 w-3 h-3 rounded-full border-4 border-white dark:border-slate-800 ${job.color} ${i > 0 ? 'border-1 border-slate-300 dark:border-slate-600' : ''} transition-colors duration-300 group-hover:bg-slate-900 dark:group-hover:bg-white group-hover:border-transparent cursor-pointer z-10 box-content`}></div>
@@ -345,13 +345,14 @@
             </SectionCard>
         );
 
+        const PROJECTS = [
+            { title: "Web-based Incident Reporting System", desc: "Web-based Incident Reporting and Utilization System for post assessment for Municipal Disaster Risk Reduction and Management Office (MDRRMO).", icon: "recycling", color: "text-emerald-500", tags: ["Capstone", "Web-based", "Laravel"], link: "https://github.com/codelikeaproz" },
+            { title: "OJT Tracker", desc: "Modern tracker mobile application design system for On-the-Job Training (OJT) of students.", icon: "palette", color: "text-purple-500", tags: ["Dart", "Flutter", "Firebase"], link: "https://ojt-tracking-app-project.web.app/" },
+            { title: "KartZone E-Comm", desc: "Full-stack e-commerce solution with payment integration.", icon: "shopping_bag", color: "text-blue-500", tags: ["React", "Node"], link: "https://github.com/codelikeaproz" },
+            { title: "FitLife Tracker", desc: "Activity tracking dashboard for fitness enthusiasts.", icon: "fitness_center", color: "text-orange-500", tags: ["Dashboard"], link: "https://github.com/codelikeaproz" },
+        ];
+
         const Projects = () => {
-            const projects = [
-                { title: "EcoTrack System", desc: "IoT-enabled waste management platform for smart cities.", icon: "recycling", color: "text-emerald-500", tags: ["Capstone", "IoT"] },
-                { title: "FinFlow App UI", desc: "Modern fintech mobile application design system.", icon: "palette", color: "text-purple-500", tags: ["UI/UX", "Figma"] },
-                { title: "KartZone E-Comm", desc: "Full-stack e-commerce solution with payment integration.", icon: "shopping_bag", color: "text-blue-500", tags: ["React", "Node"] },
-                { title: "FitLife Tracker", desc: "Activity tracking dashboard for fitness enthusiasts.", icon: "fitness_center", color: "text-orange-500", tags: ["Dashboard"] },
-            ];
             return (
                 <SectionCard className="mb-6">
                     <div className="flex items-center justify-between mb-6">
@@ -361,13 +362,21 @@
                             </span>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white transition-colors">Recent Projects</h2>
                         </div>
-                        <a className="text-sm font-medium text-slate-500 hover:text-primary flex items-center gap-1 transition-colors" href="#">
+                        <Link className="text-sm font-medium text-slate-500 hover:text-primary flex items-center gap-1 transition-colors" to="/projects">
                             View All <Icon name="chevron_right" className="text-sm" />
-                        </a>
+                        </Link>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {projects.map((proj, i) => (
-                            <div key={i} className="group bg-slate-50 dark:bg-slate-700/30 p-5 rounded-2xl hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-all cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-600">
+                        {PROJECTS.map((proj, i) => (
+                            <a
+                                key={i}
+                                href={proj.link || "#"}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group bg-slate-50 dark:bg-slate-700/30 p-5 rounded-2xl hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-all cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-600 block"
+                                aria-label={`Open ${proj.title}`}
+                                title="Open project (placeholder link for now)"
+                            >
                                 <div className="flex justify-between items-start mb-3">
                                     <div className={`bg-white dark:bg-slate-800 p-2 rounded-lg shadow-sm ${proj.color} transition-colors`}>
                                         <Icon name={proj.icon} />
@@ -381,7 +390,10 @@
                                         <span key={tag} className="px-2 py-0.5 bg-white dark:bg-slate-800 rounded text-[10px] font-medium text-slate-600 dark:text-slate-300 border border-slate-100 dark:border-slate-600 transition-colors">{tag}</span>
                                     ))}
                                 </div>
-                            </div>
+                                <p className="mt-3 text-[11px] text-slate-500 dark:text-slate-400 break-all transition-colors">
+                                    <span className="font-semibold">Link:</span> {proj.link}
+                                </p>
+                            </a>
                         ))}
                     </div>
                 </SectionCard>
@@ -495,6 +507,7 @@
                                         alt={`Gallery item ${i + 1}`}
                                         className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
                                         src={src}
+                                        loading="lazy"
                                     />
                                 </div>
                             ))}
@@ -517,6 +530,60 @@
                 <p className="mb-2">© 2025 Ralph Jumao-as. All rights reserved.</p>
                 <p className="text-xs">"Designing the future, one line of code at a time."</p>
             </footer>
+        );
+
+        const AllProjects = () => (
+            <div className="w-full">
+                <header className="max-w-7xl mx-auto pt-6 md:pt-10 px-4 md:px-8">
+                    <div className="flex items-center justify-between gap-4">
+                        <Link to="/" className="text-sm font-medium text-slate-500 hover:text-primary flex items-center gap-2 transition-colors">
+                            <Icon name="arrow_back" className="text-base" />
+                            Back to Home
+                        </Link>
+                        <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white transition-colors">
+                            All Projects
+                        </h1>
+                        <div className="w-[120px]" aria-hidden="true"></div>
+                    </div>
+                </header>
+
+                <main className="max-w-7xl mx-auto px-4 md:px-8 pt-6 pb-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {PROJECTS.map((proj, i) => (
+                            <a
+                                key={i}
+                                href={proj.link || "#"}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block"
+                                aria-label={`Open ${proj.title}`}
+                                title="Open project (placeholder link for now)"
+                            >
+                                <SectionCard className="p-5 hover:shadow-md transition-shadow">
+                                    <div className="flex justify-between items-start mb-3">
+                                        <div className={`bg-slate-50 dark:bg-slate-800 p-2 rounded-lg ${proj.color} transition-colors`}>
+                                            <Icon name={proj.icon} />
+                                        </div>
+                                        <span className="material-icons-outlined text-slate-400">arrow_outward</span>
+                                    </div>
+                                    <h3 className="font-bold text-slate-900 dark:text-white mb-1 transition-colors">{proj.title}</h3>
+                                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 transition-colors">{proj.desc}</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {proj.tags.map(tag => (
+                                            <Badge key={tag} text={tag} />
+                                        ))}
+                                    </div>
+                                    <p className="mt-4 text-[11px] text-slate-500 dark:text-slate-400 break-all transition-colors">
+                                        <span className="font-semibold">Link:</span> {proj.link}
+                                    </p>
+                                </SectionCard>
+                            </a>
+                        ))}
+                    </div>
+                </main>
+
+                <Footer />
+            </div>
         );
 
         const ChatWidget = () => {
@@ -579,7 +646,7 @@
                         <div className="p-4 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between bg-white dark:bg-slate-800">
                             <div className="flex items-center gap-3">
                                 <div className="relative">
-                                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZp22NnUzG1tsGzFa2IpJguiSPouvEHFSyzBbdpLSLaXSuNJLEi8V-V7ZNVhisRfn3DH4OboOAyQHxsxFj2iFwWcnV_FNRFEmDzxfQ6QOYsdLwiz7b5XZWfHFJD519Yuuk4o7NnP5EXNsLyKzcKgf4HseWVDOCrjLMTcx7twHF4u2OEUn4gRcuVkVujMbCqsupiWiocFitWfOAwwwWx8ef-iWFpoSkqaKmR6_nppdqsmdbijr6WXKzGB3OtfkA771kkBESKMNno4xy" alt="Ralph" className="w-10 h-10 rounded-full object-cover" />
+                                    <img src="assets/profile_img.png" alt="Ralph" className="w-10 h-10 rounded-full object-cover" />
                                     <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white dark:border-slate-800"></div>
                                 </div>
                                 <div>
@@ -601,7 +668,7 @@
                                 {messages.map((msg, idx) => (
                                     <div key={idx} className={`flex items-start gap-3 ${msg.type === 'user' ? 'flex-row-reverse' : ''}`}>
                                         {msg.type === 'bot' && (
-                                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZp22NnUzG1tsGzFa2IpJguiSPouvEHFSyzBbdpLSLaXSuNJLEi8V-V7ZNVhisRfn3DH4OboOAyQHxsxFj2iFwWcnV_FNRFEmDzxfQ6QOYsdLwiz7b5XZWfHFJD519Yuuk4o7NnP5EXNsLyKzcKgf4HseWVDOCrjLMTcx7twHF4u2OEUn4gRcuVkVujMbCqsupiWiocFitWfOAwwwWx8ef-iWFpoSkqaKmR6_nppdqsmdbijr6WXKzGB3OtfkA771kkBESKMNno4xy" alt="Ralph" className="w-8 h-8 rounded-full object-cover mt-1 flex-shrink-0" />
+                                            <img src="assets/profile_img.png" alt="Ralph" className="w-8 h-8 rounded-full object-cover mt-1 flex-shrink-0" />
                                         )}
                                         <div className={`p-3 rounded-2xl shadow-sm border max-w-[85%] text-sm ${msg.type === 'user' ? 'bg-primary text-white rounded-tr-none border-transparent' : 'bg-white dark:bg-slate-800 rounded-tl-none border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-300'}`}>
                                             <p>{msg.text}</p>
@@ -610,7 +677,7 @@
                                 ))}
                                 {isTyping && (
                                     <div className="flex items-start gap-3">
-                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZp22NnUzG1tsGzFa2IpJguiSPouvEHFSyzBbdpLSLaXSuNJLEi8V-V7ZNVhisRfn3DH4OboOAyQHxsxFj2iFwWcnV_FNRFEmDzxfQ6QOYsdLwiz7b5XZWfHFJD519Yuuk4o7NnP5EXNsLyKzcKgf4HseWVDOCrjLMTcx7twHF4u2OEUn4gRcuVkVujMbCqsupiWiocFitWfOAwwwWx8ef-iWFpoSkqaKmR6_nppdqsmdbijr6WXKzGB3OtfkA771kkBESKMNno4xy" alt="Ralph" className="w-8 h-8 rounded-full object-cover mt-1 flex-shrink-0" />
+                                        <img src="assets/profile_img.png" alt="Ralph" className="w-8 h-8 rounded-full object-cover mt-1 flex-shrink-0" />
                                         <div className="bg-white dark:bg-slate-800 p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 dark:border-slate-700">
                                             <div className="flex gap-1">
                                                 <div className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
@@ -727,6 +794,7 @@
                 <MemoryRouter>
                     <Routes>
                         <Route path="/" element={<Portfolio />} />
+                        <Route path="/projects" element={<AllProjects />} />
                     </Routes>
                 </MemoryRouter>
             );
